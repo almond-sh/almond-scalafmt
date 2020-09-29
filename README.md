@@ -13,7 +13,7 @@ Scalafmt extension for almond
 ## Install
 
 ```bash
-jupyter labextension install almond-scalafmt
+jupyter labextension install @almond-sh/scalafmt
 ```
 
 ## Contributing
