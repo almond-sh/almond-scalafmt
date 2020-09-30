@@ -63,7 +63,11 @@ jupyter lab --watch
 
 Now every change will be built locally and bundled into JupyterLab. Be sure to refresh your browser page after saving file changes to reload the extension (note: you'll need to wait for webpack to finish, which can take 10s+ at times).
 
-### Uninstall
+### Reporting issues
+
+Please report issues in the [almond repository](https://github.com/almond-sh/almond/issues) rather than in the almond-scalafmt repository.
+
+## Uninstall
 
 ```bash
 
