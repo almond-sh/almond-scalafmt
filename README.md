@@ -1,20 +1,32 @@
 # almond-scalafmt
 
-![Github Actions Status](https://github.com/almond-sh/almond-scalafmt/workflows/Build/badge.svg)
+[![Github Actions Status](https://github.com/almond-sh/almond-scalafmt/workflows/Build/badge.svg)](https://github.com/almond-sh/almond-scalafmt/actions?query=workflow%3ABuild)
 
 Scalafmt extension for almond
 
-
+![Demo](https://github.com/almond-sh/almond-scalafmt/raw/main/demo.gif)
 
 ## Requirements
 
-* JupyterLab >= 2.0
+* JupyterLab >= `2.0`
+* [almond](https://github.com/almond-sh/almond) >= `0.10.8`
 
 ## Install
 
 ```bash
 jupyter labextension install @almond-sh/scalafmt
 ```
+
+## Usage
+
+This extension adds two commands in the JupyterLab command palette:
+- Format current cell with scalafmt
+- Format all code cells with scalafmt
+
+Open the JupyterLab command palette, by clicking on the "Commands" tab in the left sidebar. Quickly
+find the almond-scalafmt commands above by typing `fmt` in the search box.
+
+These commands work when using the [almond](https://github.com/almond-sh/almond) Scala kernel `0.10.8`, or a higher version.
 
 ## Contributing
 
