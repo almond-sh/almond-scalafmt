@@ -20,7 +20,7 @@ function scalafmtConf(notebookTracker: INotebookTracker): Record<string, any> {
   const maybeConf = notebookTracker.currentWidget.model.metadata.get(
     'scalafmt'
   );
-  if (maybeConf.constructor === {}.constructor) {
+  if (maybeConf && maybeConf.constructor === {}.constructor) {
     conf = maybeConf as Record<string, any>;
   }
   return conf;
