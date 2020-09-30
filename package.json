@@ -1,6 +1,6 @@
 {
   "name": "@almond-sh/scalafmt",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Scalafmt extension for almond",
   "keywords": [
     "jupyter",
