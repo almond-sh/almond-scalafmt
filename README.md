@@ -26,6 +26,8 @@ This extension adds two commands in the JupyterLab command palette:
 Open the JupyterLab command palette, by clicking on the "Commands" tab in the left sidebar. Quickly
 find the almond-scalafmt commands above by typing `fmt` in the search box.
 
+To revert the formatting in a cell, put the cursor in this cell, and hit the undo shortcut (Command + Z on macOS).
+
 These commands work when using the [almond](https://github.com/almond-sh/almond) Scala kernel `0.10.8`, or a higher version.
 
 ## Contributing
