@@ -1,6 +1,7 @@
 # almond-scalafmt
 
 [![Github Actions Status](https://github.com/almond-sh/almond-scalafmt/workflows/Build/badge.svg)](https://github.com/almond-sh/almond-scalafmt/actions?query=workflow%3ABuild)
+[![npm version](https://badge.fury.io/js/%40almond-sh%2Fscalafmt.svg)](https://badge.fury.io/js/%40almond-sh%2Fscalafmt)
 
 Scalafmt extension for almond
 
