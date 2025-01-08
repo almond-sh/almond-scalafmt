@@ -17,9 +17,7 @@ interface IFormatResponseContent {
 
 function scalafmtConf(notebookTracker: INotebookTracker): Record<string, any> {
   let conf: Record<string, any> = {};
-  const maybeConf = notebookTracker.currentWidget.model.metadata.get(
-    'scalafmt'
-  );
+  const maybeConf = notebookTracker.currentWidget.model.metadata['scalafmt'];
   if (maybeConf && maybeConf.constructor === {}.constructor) {
     conf = maybeConf as Record<string, any>;
   }
@@ -44,14 +42,14 @@ function getCells(
       return;
     }
 
-    const it = notebookModel.cells.iter();
+    const it = notebookModel.cells[Symbol.iterator]();
     let cellModel = it.next();
-    while (cellModel) {
-      const cellId = cellModel.id;
+    while (!cellModel.done) {
+      const cellId = cellModel.value.id;
       const initialCode = cellModel.value.text;
-      if (cellModel.type === 'code' && initialCode.length > 0) {
+      if (cellModel.value.type === 'code' && initialCode.length > 0) {
         requestCells[cellId] = initialCode;
-        cellDict[cellId] = cellModel;
+        cellDict[cellId] = cellModel.value;
       }
       cellModel = it.next();
     }
@@ -69,7 +67,7 @@ function getCells(
     }
 
     const cellId = cellModel.id;
-    const initialCode = cellModel.value.text;
+    const initialCode = cellModel.sharedModel.source;
 
     if (initialCode.length === 0) {
       console.log('nothing to format');
@@ -93,18 +91,13 @@ function handleResponse(
       if (response.key in cellDict && response.key in requestCells) {
         const cellModel = cellDict[response.key];
         const initialCode = requestCells[response.key];
-        const codeObservable = cellModel.value;
+        const codeObservable = cellModel.sharedModel;
         if (
           response.code &&
           response.initial_code === initialCode &&
-          codeObservable.text === initialCode
+          codeObservable.source === initialCode
         ) {
-          // FIXME Seems there's no way to set the content in one go
-          codeObservable.insert(0, response.code);
-          codeObservable.remove(
-            response.code.length,
-            codeObservable.text.length
-          );
+          codeObservable.setSource(response.code);
         } else {
           console.log(
             'Cell code changed, not updating it with stale formatted code'
