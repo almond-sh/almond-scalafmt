@@ -1,0 +1,16 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.6.5
+_src_path: https://github.com/jupyterlab/extension-template
+advanced: false
+author_email: ''
+author_name: Alex Archambault
+has_ai_rules: false
+has_binder: false
+has_settings: true
+kind: frontend
+labextension_name: '@almond-sh/scalafmt'
+project_short_description: Scalafmt extension for almond
+python_name: almond_scalafmt
+repository: https://github.com/almond-sh/almond-scalafmt
+test: true
+

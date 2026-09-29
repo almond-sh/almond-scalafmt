@@ -2,3 +2,7 @@ node_modules
 **/node_modules
 **/lib
 **/package.json
+!/package.json
+almond_scalafmt
+eslint.config.mjs
+.venv
