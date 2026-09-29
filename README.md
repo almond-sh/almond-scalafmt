@@ -1,78 +1,48 @@
 # almond-scalafmt
 
-[![Github Actions Status](https://github.com/almond-sh/almond-scalafmt/workflows/Build/badge.svg)](https://github.com/almond-sh/almond-scalafmt/actions?query=workflow%3ABuild)
-[![npm version](https://badge.fury.io/js/%40almond-sh%2Fscalafmt.svg)](https://badge.fury.io/js/%40almond-sh%2Fscalafmt)
+[![Github Actions Status](https://github.com/almond-sh/almond-scalafmt/actions/workflows/build.yml/badge.svg)](https://github.com/almond-sh/almond-scalafmt/actions/workflows/build.yml)
+[![npm version](https://img.shields.io/npm/v/@almond-sh/scalafmt)](https://www.npmjs.com/package/@almond-sh/scalafmt)
 
-Scalafmt extension for almond
+JupyterLab extension to format the code cells of [almond](https://almond.sh) Scala notebooks with [scalafmt](https://scalameta.org/scalafmt).
 
 ![Demo](https://github.com/almond-sh/almond-scalafmt/raw/main/demo.gif)
 
 ## Requirements
 
-* JupyterLab >= `2.0`
-* [almond](https://github.com/almond-sh/almond) >= `0.10.8`
+- JupyterLab >= `4.0`
+- [almond](https://github.com/almond-sh/almond) >= `0.10.8`
 
 ## Install
 
 ```bash
-jupyter labextension install @almond-sh/scalafmt
+pip install almond-scalafmt
 ```
+
+No JupyterLab rebuild (nor Node.js) is needed: the extension ships prebuilt.
 
 ## Usage
 
-This extension adds two commands in the JupyterLab command palette:
-- Format current cell with scalafmt
-- Format all code cells with scalafmt
+When a notebook runs the almond kernel, this extension adds two commands:
 
-Open the JupyterLab command palette, by clicking on the "Commands" tab in the left sidebar. Quickly
-find the almond-scalafmt commands above by typing `fmt` in the search box.
+- **Format Selected Cells with scalafmt**, also available in the context menu of code cells
+- **Format All Code Cells with scalafmt**
 
-To revert the formatting in a cell, put the cursor in this cell, and hit the undo shortcut (Command + Z on macOS).
+Both can be found in the command palette (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>, or <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> on macOS), by typing `scalafmt`.
+Keyboard shortcuts can be assigned to them in _Settings > Settings Editor > Keyboard Shortcuts_.
 
-These commands work when using the [almond](https://github.com/almond-sh/almond) Scala kernel `0.10.8`, or a higher version.
+To revert the formatting of a cell, put the cursor in this cell, and hit the undo shortcut
+(<kbd>Ctrl</kbd>+<kbd>Z</kbd>, or <kbd>Cmd</kbd>+<kbd>Z</kbd> on macOS).
 
-## Contributing
-
-### Install
-
-The `jlpm` command is JupyterLab's pinned version of
-[yarn](https://yarnpkg.com/) that is installed with JupyterLab. You may use
-`yarn` or `npm` in lieu of `jlpm` below.
-
-```bash
-# Clone the repo to your local environment
-# Move to almond-scalafmt directory
-
-# Install dependencies
-jlpm
-# Build Typescript source
-jlpm build
-# Link your development version of the extension with JupyterLab
-jupyter labextension install .
-# Rebuild Typescript source after making changes
-jlpm build
-# Rebuild JupyterLab after making any changes
-jupyter lab build
-```
-
-You can watch the source directory and run JupyterLab in watch mode to watch for changes in the extension's source and automatically rebuild the extension and application.
-
-```bash
-# Watch the source directory in another terminal tab
-jlpm watch
-# Run jupyterlab in watch mode in one terminal tab
-jupyter lab --watch
-```
-
-Now every change will be built locally and bundled into JupyterLab. Be sure to refresh your browser page after saving file changes to reload the extension (note: you'll need to wait for webpack to finish, which can take 10s+ at times).
-
-### Reporting issues
-
-Please report issues in the [almond repository](https://github.com/almond-sh/almond/issues) rather than in the almond-scalafmt repository.
+Cells edited while scalafmt is running are left untouched.
 
 ## Uninstall
 
 ```bash
-
-jupyter labextension uninstall almond-scalafmt
+pip uninstall almond-scalafmt
 ```
+
+## Contributing
+
+If you would like to contribute to this extension, please refer to the [Contributing Guide](CONTRIBUTING.md).
+
+Please report issues in the [almond repository](https://github.com/almond-sh/almond/issues) rather than in the almond-scalafmt repository.

@@ -1,0 +1,17 @@
+{
+  "title": "almond scalafmt",
+  "description": "Format Scala notebook cells with scalafmt, via almond.",
+  "jupyter.lab.menus": {
+    "context": [
+      {
+        "command": "almond:scalafmt-current-cell",
+        "selector": ".jp-Notebook .jp-CodeCell",
+        "rank": 60
+      }
+    ]
+  },
+  "jupyter.lab.shortcuts": [],
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false
+}
