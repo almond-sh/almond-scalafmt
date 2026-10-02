@@ -2,6 +2,7 @@
 
 [![Github Actions Status](https://github.com/almond-sh/almond-scalafmt/actions/workflows/build.yml/badge.svg)](https://github.com/almond-sh/almond-scalafmt/actions/workflows/build.yml)
 [![npm version](https://img.shields.io/npm/v/@almond-sh/scalafmt)](https://www.npmjs.com/package/@almond-sh/scalafmt)
+[![PyPI version](https://img.shields.io/pypi/v/almond-scalafmt)](https://pypi.org/project/almond-scalafmt)
 
 JupyterLab extension to format the code cells of [almond](https://almond.sh) Scala notebooks with [scalafmt](https://scalameta.org/scalafmt).
 
